@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HW_29092023_WPFClientApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="LightGray">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"  Content="IP: " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></Label>
+            <TextBox Grid.Column="1" x:Name="tb_IP" Margin="2, 10, 2, 10" VerticalContentAlignment="Center"></TextBox>
+            <Label Grid.Column="2"  Content="Port: " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></Label>
+            <TextBox Grid.Column="3" x:Name="tb_Port" Margin="2, 10, 2, 10" VerticalContentAlignment="Center"  ></TextBox>
+            <Button Grid.Column="4" x:Name="btn_Connect" Content="Connect" FontSize="18" Background="IndianRed" Margin="5, 10, 5, 10" Click="btn_Connect_Click"></Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" x:Name="btn_GetDate" Content="Get Date" FontSize="18"  Margin="15" Click="btn_GetDate_Click"></Button>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="btn_GetTime" Content="Get Time" FontSize="18"  Margin="15" Click="btn_GetTime_Click" ></Button>
+            <TextBlock x:Name="tb_Answer" Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" Margin="15" VerticalAlignment="Center" HorizontalAlignment="Center"  ></TextBlock>
+        </Grid>
     </Grid>
 </Window>
